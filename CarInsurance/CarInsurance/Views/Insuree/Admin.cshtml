@@ -1,0 +1,33 @@
+﻿@using CarInsurance.ViewModels
+@model List<InsureeVm>
+
+<h2>Admin</h2>
+
+<p>
+  @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+
+  @foreach (var insuree in Model)
+  {
+    <tr>
+      <td>
+        @insuree.FirstName
+      </td>
+      <td>
+        @insuree.LastName
+      </td>
+      <td>
+        @insuree.EmailAddress
+      </td>
+      <td>
+        @insuree.Quote
+      </td>
+    </tr>
+    <td>
+      @Html.ActionLink("Back to List", "Index")
+    </td>
+  }
+</table>
+
+
