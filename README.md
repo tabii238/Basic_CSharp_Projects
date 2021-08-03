@@ -10,4 +10,4 @@ Main Projects:
         A simple console app for submitting a daily report for an LMS
         
   - Final Challenge Program:
-        A code first database example
+        A code first database example that creates a basic Student database and allows the user to add Students. 
