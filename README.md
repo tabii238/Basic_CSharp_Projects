@@ -6,8 +6,8 @@ Main Projects:
         An MVC web app for creating a new Insuree and then calculating and displaying the Insuree's quote.
         Also includes an Admin page for viewing the Insurees in the database and their quotes.
   
-  - TwentyOne Game:
-        A simple blackjack game console app
+  - Daily Report:
+        A simple console app for submitting a daily report for an LMS
         
   - Final Challenge Program:
         A code first database example
