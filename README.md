@@ -2,7 +2,7 @@
 Simple projects created with C# and .NET Framework
 
 Projects:    
-  - Car Insurance MVC App:
+  - Car Insurance:
         An MVC web app that for creating a new Insuree and then calculating and displaying the Insuree's quote.
         Also includes an Admin page for viewing the Insurees in the database and their quotes.
   
