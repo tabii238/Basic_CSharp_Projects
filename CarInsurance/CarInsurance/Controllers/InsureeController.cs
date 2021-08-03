@@ -57,86 +57,39 @@ namespace CarInsurance.Controllers
                 if (DateTime.Now.Year - insuree.DateOfBirth.Year <= 18) // if insuree's age is 18 or less
                 {
                     quote = 150; //base quote $50 + 100
-                    if (insuree.CarYear < 2000 || insuree.CarYear > 2015)
-                    {
-                        quote += 25; // quote + 25
-                    }
-                    if (insuree.CarMake == "Porsche")
-                    {
-                        quote += 25; // quote + 25
-                        if (insuree.CarMake == "Porsche" && insuree.CarModel == "911 Carrera")
-                        {
-                            quote += 25; // quote + 25
-                        }
-                    }
-                    if (insuree.SpeedingTickets >= 1)
-                    {
-                        quote += 10 * insuree.SpeedingTickets; // add 10 for every speeding ticket
-                    }
-                    if (insuree.DUI == true)
-                    {
-                        quote += quote * 25 / 100; // add 25%
-                    }
-                    if (insuree.CoverageType == true)
-                    {
-                        quote += quote * 50 / 100; // add 50%
-                    }
                 }
                 else if (DateTime.Now.Year - insuree.DateOfBirth.Year > 18 && DateTime.Now.Year - insuree.DateOfBirth.Year < 25) // if insuree's age is over 18 and less than 25
                 {
                     quote = 100; //base quote + 50
-                    if (insuree.CarYear < 2000 || insuree.CarYear > 2015)
-                    {
-                        quote += 25; // quote + 25 
-                    }
-                    if (insuree.CarMake == "Porsche")
-                    {
-                        quote += 25; // quote + 25
-                        if (insuree.CarMake == "Porsche" && insuree.CarModel == "911 Carrera")
-                        {
-                            quote += 25; // quote + 25 
-                        }
-                    }
-                    if (insuree.SpeedingTickets >= 1)
-                    {
-                        quote += 10 * insuree.SpeedingTickets; // add 10 for every speeding ticket
-                    }
-                    if (insuree.DUI == true)
-                    {
-                        quote += quote * 25 / 100; // add 25%
-                    }
-                    if (insuree.CoverageType == true)
-                    {
-                        quote += quote * 50 / 100; // add 50%
-                    }
                 }
                 else // if insuree is over 25
                 {
                     quote = 75; // base quote + 25
-                    if (insuree.CarYear < 2000 || insuree.CarYear > 2015)
+                }
+
+                if (insuree.CarYear < 2000 || insuree.CarYear > 2015)
+                {
+                     quote += 25; // quote + 25
+                }
+                if (insuree.CarMake == "Porsche")
+                {
+                    quote += 25; // quote + 25
+                    if (insuree.CarMake == "Porsche" && insuree.CarModel == "911 Carrera")
                     {
-                        quote += 25; // quote + 25 
+                        quote += 25; // quote + 25
                     }
-                    if (insuree.CarMake == "Porsche")
-                    {
-                        quote += 25; // quote + 25 
-                        if (insuree.CarMake == "Porsche" && insuree.CarModel == "911 Carrera")
-                        {
-                            quote += 25; // quote + 50 
-                        }
-                    }
-                    if (insuree.SpeedingTickets >= 1)
-                    {
-                        quote += 10 * insuree.SpeedingTickets; // add 10 for every speeding ticket
-                    }
-                    if (insuree.DUI == true)
-                    {
-                        quote += quote * 25 / 100; // add 25%
-                    }
-                    if (insuree.CoverageType == true)
-                    {
-                        quote += quote * 50 / 100; // add 50%
-                    }
+                }
+                if (insuree.SpeedingTickets >= 1)
+                {
+                    quote += 10 * insuree.SpeedingTickets; // add 10 for every speeding ticket
+                }
+                if (insuree.DUI == true)
+                {
+                    quote += quote * 25 / 100; // add 25%
+                }
+                if (insuree.CoverageType == true) // if full coverage 
+                {
+                    quote += quote * 50 / 100; // add 50%
                 }
                 Math.Round(quote, 2);
             }
